@@ -105,6 +105,18 @@
 			<button class="btn" onclick="pcls()">つなげたらクリック</button>
 		</div>
 		<br><br>
+		<div class="procon" style="background: #fbf5cb;">
+			<span class="title">GravityDuck（注目のゲーム）</span><br><br>
+			<span style="font-weight: bold;">説明：</span><br>
+			<span class="desc">関数電卓初のアドベンチャープラットフォームゲーム！４０レベルを達成して金の卵をゲットしよう！<strong>iCalc</strong>一押しのゲーム！</span><br>
+			<span style="font-weight: bold;">操作方法：</span><br>
+			<span class="desc">矢印キー、SHIFT、EXE（タイトル画面・レベル選択にて使用）、EXIT（ゲームをやめるときに使用）</span><br>
+			<img src="https://www.cemetech.net/img/ss/000780.gif">
+			<br>
+			<form action="javascript:gravdow()">
+				<input type="submit" value="ダウンロード" class="btn" onclick="opn()">
+			</form>
+		</div>
 		<div class="procon">
 			<span class="title">2048</span><br><br>
 			<span style="font-weight: bold;">説明：</span><br>
@@ -129,6 +141,20 @@
 				<input type="submit" value="ダウンロード" class="btn" onclick="opn()">
 			</form>
 		</div>
+		<div class="procon">
+			<span class="title">Prizoop</span><br><br>
+			<span style="font-weight: bold;">説明：</span><br>
+			<span class="desc">任天堂のゲームボイのゲームを無料で遊びまくれるオリジナルプログラム！ゲームデータもダウンロードしないとプレイできないよ！（今のバージョンは：Super Mario Bros.がプレイできるよ！）</span><br>
+			<span style="font-weight: bold;">操作方法：</span><br>
+			<span class="desc">矢印キー、OPTN（A）、VARS（B）、F5（SELECT）、F6（START）、EXE</span><br>
+			<img src="https://www.cemetech.net/img/ss/003313.gif">
+			<br>
+			<form action="javascript:gbadow()">
+				<input type="submit" value="ダウンロード" class="btn" onclick="opn()">
+			</form>
+		</div>
+		<br><br>
+		<span class="btn">(c) 2017 iCalc Team</span>
 		<script>
 			function opn() {
 				document.getElementById("tip").style.display = "";
@@ -144,6 +170,13 @@
 			}
 			function minedow() {
 				window.open("https://sites.google.com/site/tikitikitekegamecabinet/home/Minesweeper.g3a?attredirects=0&d=1");
+			}
+			function gravdow() {
+				window.open("https://sites.google.com/site/tikitikitekegamecabinet/home/GravityDuck.g3a?attredirects=0&d=1");
+			}
+			function gbadow() {
+				window.open("https://sites.google.com/site/tikitikitekegamecabinet/home/prizoop.g3a?attredirects=0&d=1");
+				window.open("https://sites.google.com/site/tikitikitekegamecabinet/home/Super%20Mario%20Land%20%28V1.0%29%20%28JUA%29%20%5B%21%5D.gb?attredirects=0&d=1");
 			}
 		</script>
 	</body>
