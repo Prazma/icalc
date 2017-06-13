@@ -71,11 +71,29 @@
 				appearance: none;
 				text-decoration: none;
 			}
+			#tip {
+				position: fixed;
+				top: 0px;
+				background: #f1f1f1;
+				border: 1px #a1a1a1 solid;
+				padding: 8px;
+				width: 100%;
+				height: 100vh;
+				z-index: 100;
+				font-family: sans-serif;
+				text-align: center;
+			}
 		</style>
 	</head>
 	<body>
 		<div id="calcnav">
 			<span class="logo" style="margin-left: 10px;">iCalc</span>
+		</div>
+		<div id="tip" style="display: none;">
+			<span style="font-size: 25px;">１. <strong></strong></span><span>ダウンロードした<strong>ファイルを関数電卓に移してください</strong></span><br><br>
+			<span style="font-size: 25px;">２. <strong></strong></span><span><strong>電卓をパソコンから抜いてゲームをする場合：</strong><br>「AC」ボタンを押して、「Complete!」というメッセージがでれば、<br>「EXIT」を押してから「MENUE」を押してください</span><br><br>
+			<br><br><span style="font-size: 25px;">ご利用ありがとうございました</span><br>
+			<button class="btn" onclick="cls()">続けてダウンロードする</button>
 		</div>
 		<br><br>
 		<div class="procon">
@@ -84,7 +102,20 @@
 			<span class="desc">人気のスマートフォン・インターネットゲーム、「2048」の関数電卓バージョン！</span><br>
 			<img src="https://www.cemetech.net/img/ss/001758.gif">
 			<br>
-			<a class="btn" href="https://sites.google.com/site/tikitikitekegamecabinet/home/2048.g3a?attredirects=0&d=1">ダウンロード</a>
+			<form action="javascript:nizerodow()">
+				<input type="submit" value="ダウンロード" class="btn" onclick="opn()">
+			</form>
 		</div>
+		<script>
+			function opn() {
+				document.getElementById("tip").style.display = "";
+			}
+			function cls() {
+				document.getElementById("tip").style.display = "none";
+			}
+			function nizerodow() {
+				window.open("https://sites.google.com/site/tikitikitekegamecabinet/home/2048.g3a?attredirects=0&d=1");
+			}
+		</script>
 	</body>
 </html>
