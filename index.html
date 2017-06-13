@@ -1,43 +1,17 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>iCalc - CASIO関数電卓用のゲームダウンロードサイト</title>
+		<title>wellet</title>
 		<meta name="viewport" content="width=device-width, user-scalable=no">
-		<meta name="description" content="CASIO関数電卓用のゲームダウンロードのオンラインサービス">
 		<style>
 			body {
+				background: #fafbfc;
 				margin: 0;
 			}
-			#calcnav {
+			#proport{
 				position: fixed;
-				top: 0;
-				background: #39469C;
+				bottom: 10px;
 				width: 100%;
-				color: white;
-				font-size: 30px;
-				font-family: sans-serif;
-				padding: 5px 0px 5px 0px;
-				box-shadow: 0px 3px 10px #6576C6;
-			}
-			.procon {
-				margin-top: 20px;
-				padding: 5px;
-				background: #f1f1f1;
-				width: 90%;
-				margin-right: auto;
-				margin-left: auto;
-				border: 1px #cccccc solid;
-				border-radius: 6px;
-				font-family: sans-serif;
-				font-weight: lighter;
-				text-align: center;
-			}
-			.title {
-				font-size: 27px;
-				font-weight: bold;
-			}
-			.desc {
-				font-size: 19px;
 			}
 			.btn {
 				-webkit-appearance: button;
@@ -69,115 +43,86 @@
 				-webkit-appearance: none;
 				-moz-appearance: none;
 				appearance: none;
-				text-decoration: none;
+				width: 45%;
 			}
-			#tip, #ptip {
-				position: fixed;
-				top: 0px;
-				background: #f1f1f1;
-				border: 1px #a1a1a1 solid;
-				padding: 8px;
-				width: 100%;
-				height: 100vh;
-				z-index: 100;
-				font-family: sans-serif;
+			.texput {
+				min-height: 34px;
+				padding: 0px 8px;
+				font-size: 14px;
+				line-height: 20px;
+				color: #24292e;
+				vertical-align: middle;
+				background-color: #fff;
+				background-repeat: no-repeat;
+				background-position: right 8px center;
+				border: 1px solid #d1d5da;
+				border-radius: 3px;
+				outline: none;
+				box-shadow: inset 0 1px 2px rgba(27,31,35,0.075);
+				width: 87%;
+			}
+			#userport {
 				text-align: center;
+				width: 90%;
+				margin-left: auto;
+				margin-right: auto;
+				padding: 5px;
+				background: #f1f8ff;
+				border: 1px solid #c8e1ff;
+				border-radius: 3px;
+			}
+			.purp {
+				background-color: #5260B0;
+				background-image: -webkit-linear-gradient(270deg, #6576C6 0%, #39469C 90%);
+				background-image: linear-gradient(-180deg, #6576C6 0%, #39469C 90%);
+				color: #ffffff;
+			}
+			#navix {
+				position: fixed;
+				top: 0;
+				background: #39469C;
+				width: 100%;
+				color: white;
+				font-size: 35px;
+				font-family: monospace;
+				padding: 0px 0px 5px 0px;
+				box-shadow: 0px 3px 10px #6576C6;
+			}
+			#list {
+				margin-top: 50px;
+				background: #f1f1f1;
+				width: 90%;
+				padding: 8px;
+				margin-left: auto;
+				margin-right: auto;
+				border: 1px #bfbfbf solid;
+				border-radius: 3px;
+				text-align: center;
+				font-family: sans-serif;
 			}
 		</style>
 	</head>
 	<body>
-		<div id="calcnav">
-			<span class="logo" style="margin-left: 10px;">iCalc</span>
+		<div id="list">
+			<span id="alex">登録されている人がいないよ</span>
 		</div>
-		<div id="tip" style="display: none;">
-			<span style="font-size: 25px;">１. <strong></strong></span><span>ダウンロードした<strong>ファイルを関数電卓に移してください</strong></span><br><br>
-			<span style="font-size: 25px;">２. <strong></strong></span><span><strong>電卓をパソコンから抜いてゲームをする場合：</strong><br>「AC」ボタンを押して、「Complete!」というメッセージがでれば、<br>「EXIT」を押してから「MENUE」を押してください</span><br><br>
-			<br><br><span style="font-size: 25px;">ご利用ありがとうございました</span><br>
-			<button class="btn" onclick="cls()">続けてダウンロードする</button>
+		<div id="navix">
+			<span class="logo" style="margin-left: 10px;">w</span>
 		</div>
-		<div id="ptip">
-			<span style="font-size: 20px;">このウェブサービスはパソコンのみ対応しています</span><br><br>
-			<span style="font-size: 25px;">パソコンと関数電卓をケーブルでつなげてください</span><br>
-			<img src="http://i.imgur.com/5YasQ.jpg"><br>
-			<span style="font-size: 25px;">このスクリーンがでたら</span><br>
-			<span style="font-size: 25px;">F1を押してください</span><br>
-			<br>
-			<button class="btn" onclick="pcls()">つなげたらクリック</button>
+		<div id="proport">
+			<div id="userport">
+				<input type="text" placeholder="名前" class="texput"><br>
+				<div style="margin-top: 5px;">
+					<select class="btn">
+						<option value="1">用途を選択</option>
+						<option value="1">払う</option>
+						<option value="2">食べる</option>
+						<option value="2">使う</option>
+						<option value="1">あげる</option>
+					</select>
+					<button class="btn purp" onclick="addprop()">＋追加</button>
+				</div>
+			</div>
 		</div>
-		<br><br>
-		<div class="procon" style="background: #fbf5cb;">
-			<span class="title">GravityDuck（注目のゲーム）</span><br><br>
-			<span style="font-weight: bold;">説明：</span><br>
-			<span class="desc">関数電卓初のアドベンチャープラットフォームゲーム！４０レベルを達成して金の卵をゲットしよう！<strong>iCalc</strong>一押しのゲーム！</span><br>
-			<span style="font-weight: bold;">操作方法：</span><br>
-			<span class="desc">矢印キー、SHIFT、EXE（タイトル画面・レベル選択にて使用）、EXIT（ゲームをやめるときに使用）</span><br>
-			<img src="https://www.cemetech.net/img/ss/000780.gif">
-			<br>
-			<form action="javascript:gravdow()">
-				<input type="submit" value="ダウンロード" class="btn" onclick="opn()">
-			</form>
-		</div>
-		<div class="procon">
-			<span class="title">2048</span><br><br>
-			<span style="font-weight: bold;">説明：</span><br>
-			<span class="desc">人気のスマートフォン・インターネットゲーム、「2048」の関数電卓バージョン！</span><br>
-			<span style="font-weight: bold;">操作方法：</span><br>
-			<span class="desc">矢印キー</span><br>
-			<img src="https://www.cemetech.net/img/ss/001758.gif">
-			<br>
-			<form action="javascript:nizerodow()">
-				<input type="submit" value="ダウンロード" class="btn" onclick="opn()">
-			</form>
-		</div>
-		<div class="procon">
-			<span class="title">マインスイーパー</span><br><br>
-			<span style="font-weight: bold;">説明：</span><br>
-			<span class="desc">人気ののパソコンゲーム、マインスイーパーの関数電卓バージョン！操作しやすいバージョンです。</span><br>
-			<span style="font-weight: bold;">操作方法：</span><br>
-			<span class="desc">矢印キー、EXE</span><br>
-			<img src="https://www.cemetech.net/img/ss/000671.gif">
-			<br>
-			<form action="javascript:minedow()">
-				<input type="submit" value="ダウンロード" class="btn" onclick="opn()">
-			</form>
-		</div>
-		<div class="procon">
-			<span class="title">Prizoop</span><br><br>
-			<span style="font-weight: bold;">説明：</span><br>
-			<span class="desc">任天堂のゲームボイのゲームを無料で遊びまくれるオリジナルプログラム！ゲームデータもダウンロードしないとプレイできないよ！（今のバージョンは：Super Mario Bros.がプレイできるよ！）</span><br>
-			<span style="font-weight: bold;">操作方法：</span><br>
-			<span class="desc">矢印キー、OPTN（A）、VARS（B）、F5（SELECT）、F6（START）、EXE</span><br>
-			<img src="https://www.cemetech.net/img/ss/003313.gif">
-			<br>
-			<form action="javascript:gbadow()">
-				<input type="submit" value="ダウンロード" class="btn" onclick="opn()">
-			</form>
-		</div>
-		<br><br>
-		<span class="btn">(c) 2017 iCalc Team</span>
-		<script>
-			function opn() {
-				document.getElementById("tip").style.display = "";
-			}
-			function cls() {
-				document.getElementById("tip").style.display = "none";
-			}
-			function pcls() {
-				document.getElementById("ptip").style.display = "none";
-			}
-			function nizerodow() {
-				window.open("https://sites.google.com/site/tikitikitekegamecabinet/home/2048.g3a?attredirects=0&d=1");
-			}
-			function minedow() {
-				window.open("https://sites.google.com/site/tikitikitekegamecabinet/home/Minesweeper.g3a?attredirects=0&d=1");
-			}
-			function gravdow() {
-				window.open("https://sites.google.com/site/tikitikitekegamecabinet/home/GravityDuck.g3a?attredirects=0&d=1");
-			}
-			function gbadow() {
-				window.open("https://sites.google.com/site/tikitikitekegamecabinet/home/prizoop.g3a?attredirects=0&d=1");
-				window.open("https://sites.google.com/site/tikitikitekegamecabinet/home/Super%20Mario%20Land%20%28V1.0%29%20%28JUA%29%20%5B%21%5D.gb?attredirects=0&d=1");
-			}
-		</script>
 	</body>
 </html>
