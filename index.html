@@ -71,7 +71,7 @@
 				appearance: none;
 				text-decoration: none;
 			}
-			#tip {
+			#tip, #ptip {
 				position: fixed;
 				top: 0px;
 				background: #f1f1f1;
@@ -95,6 +95,15 @@
 			<br><br><span style="font-size: 25px;">ご利用ありがとうございました</span><br>
 			<button class="btn" onclick="cls()">続けてダウンロードする</button>
 		</div>
+		<div id="ptip">
+			<span style="font-size: 20px;">このウェブサービスはパソコンのみ対応しています</span><br><br>
+			<span style="font-size: 25px;">パソコンと関数電卓をケーブルでつなげてください</span><br>
+			<img src="http://i.imgur.com/5YasQ.jpg"><br>
+			<span style="font-size: 25px;">このスクリーンがでたら</span><br>
+			<span style="font-size: 25px;">F1を押してください</span><br>
+			<br>
+			<button class="btn" onclick="pcls()">つなげたらクリック</button>
+		</div>
 		<br><br>
 		<div class="procon">
 			<span class="title">2048</span><br><br>
@@ -108,6 +117,18 @@
 				<input type="submit" value="ダウンロード" class="btn" onclick="opn()">
 			</form>
 		</div>
+		<div class="procon">
+			<span class="title">マインスイーパー</span><br><br>
+			<span style="font-weight: bold;">説明：</span><br>
+			<span class="desc">人気ののパソコンゲーム、マインスイーパーの関数電卓バージョン！操作しやすいバージョンです。</span><br>
+			<span style="font-weight: bold;">操作方法：</span><br>
+			<span class="desc">矢印キー、EXE</span><br>
+			<img src="https://www.cemetech.net/img/ss/000671.gif">
+			<br>
+			<form action="javascript:minedow()">
+				<input type="submit" value="ダウンロード" class="btn" onclick="opn()">
+			</form>
+		</div>
 		<script>
 			function opn() {
 				document.getElementById("tip").style.display = "";
@@ -115,8 +136,14 @@
 			function cls() {
 				document.getElementById("tip").style.display = "none";
 			}
+			function pcls() {
+				document.getElementById("ptip").style.display = "none";
+			}
 			function nizerodow() {
 				window.open("https://sites.google.com/site/tikitikitekegamecabinet/home/2048.g3a?attredirects=0&d=1");
+			}
+			function minedow() {
+				window.open("https://sites.google.com/site/tikitikitekegamecabinet/home/Minesweeper.g3a?attredirects=0&d=1");
 			}
 		</script>
 	</body>
